@@ -32,6 +32,8 @@ import org.hibernate.query.Query;
 @Transactional
 public class Application   implements CommandLineRunner {
 
+	//Estudo de criteria
+	
 	@PersistenceContext
 	private	EntityManager entityManager;
 	
@@ -58,6 +60,9 @@ public class Application   implements CommandLineRunner {
 		  
 		Query<Pessoa> query = (Query<Pessoa>) entityManager.createQuery(createQuery);
 		List<Pessoa> empList = query.list();
+		
+		empList.stream().forEach(p -> System.out.println(p.toString()));
+		
 		System.out.println("Nunber of rows: "+empList.size());
 		 }catch(HibernateException e){
 			 e.printStackTrace();

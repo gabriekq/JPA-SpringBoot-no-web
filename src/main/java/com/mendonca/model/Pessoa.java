@@ -34,6 +34,12 @@ public void setNome(String nome) {
 }
 
 
+@Override
+public String toString() {
+	return "Pessoa [idPessoa=" + idPessoa + ", nome=" + nome + "]";
+}
+
+
 
 
 	
